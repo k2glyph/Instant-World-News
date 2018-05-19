@@ -4,14 +4,15 @@ import Display from './Display.js';
 import './Display.css';
 import Outlet from './Outlet.js';
 import './Outlet.css';
+import { observer } from 'mobx-react';
 
+@observer
 class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
       count: 0,
-      value: this.props.default
+      value: 'espn-cric-info'
     };
     this.handleChange = this.handleChange.bind(this);
 
@@ -21,32 +22,24 @@ class Search extends Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
-    console.log(this.state.value);
   }
 
   componentWillMount() {
+    this.props.store.filter=this.state.value;
     axios.get(this.apiUrl).then(res => {
-      this.setState({ data: res.data.sources });
-      this.setState({ count: res.data.sources.length });
+      this.props.store.news=res.data.sources;
+      this.props.store.count=res.data.sources.length;
     });
   }
 
   render() {
+    const { news, count, filter } = this.props.store;
+    
     return (
       <div className="">
-        <h4>Select from {this.state.count} News Outlets</h4>
-        <select value={this.state.value} onChange={this.handleChange}>
-          >
-          {this.state.data.map((outlet, i) => {
-            return (
-              <option key={i} value={outlet.id}>
-                {outlet.name}
-              </option>
-            );
-          })}
-        </select>
-        <Outlet default={this.state.value} />
-        <Display default={this.state.value} />
+        {/* <h4>Select from {count} News Outlets</h4> */}
+        <Outlet default={filter} />
+        <Display default={filter} />
       </div>
     );
   }

@@ -5,16 +5,19 @@ import Header from './Header';
 import { BrowserRouter } from 'react-router-dom'
 import Ad from './pages/ad';
 import Store from './store/newstore';
+import Footer from './Footer';
 import './index.css';
 
 /*DOM Render*/
-ReactDOM.render(<BrowserRouter>
+ReactDOM.render(
+<BrowserRouter>
   <React.Fragment>
     <div className="app">
-      <Header />
-      {/* <Ad /> */}
-      <Main />
-      {/* <Ad /> */}
+      <Header store={Store} />
+      <Ad />
+      <Main store={Store} />
+      <Footer store={Store} />
+      <Ad />
     </div>
   </React.Fragment>
 </BrowserRouter>, document.getElementById('root'));

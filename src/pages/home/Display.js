@@ -59,7 +59,6 @@ class Display extends Component {
       .then(res => {
         const articles = res.data.articles;
         // Set state with result
-        console.log(articles);
         this.setState({ articles: articles });
       })
       .catch(error => {
