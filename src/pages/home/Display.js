@@ -4,16 +4,14 @@ import Ad from '../ad';
 
 class Display extends Component {
   constructor(props) {
-    // Pass props to parent class
     super(props);
-    // Set initial state
     this.state = {
       articles: []
     };
   }
 
   // Lifecycle method
-  componentWillMount() {
+  componentDidMount() {
     this.getArticles(this.props.default);
   }
 
@@ -89,9 +87,10 @@ class Display extends Component {
               <div className="image">
                 <img src={news.urlToImage} alt="" />
               </div>
+              {/* <Ad slot="" />  */}
             </div>
+            
           );
-        <Ad /> 
         })}
       </div>
     );

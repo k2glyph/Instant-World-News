@@ -14,7 +14,7 @@ class Outlet extends Component {
   }
 
   // Lifecycle method
-  componentWillMount() {
+  componentDidMount() {
     // Make HTTP reques with Axios
     this.getSources();
   }

@@ -11,15 +11,13 @@ import './index.css';
 /*DOM Render*/
 ReactDOM.render(
 <BrowserRouter>
-  <React.Fragment>
     <div className="app">
       <Header store={Store} />
       <Ad />
       <Main store={Store} />
-      <Footer store={Store} />
       <Ad />
+      <Footer store={Store} />
     </div>
-  </React.Fragment>
 </BrowserRouter>, document.getElementById('root'));
 
 var links = document.querySelectorAll('.smoothScroll');

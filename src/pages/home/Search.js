@@ -23,7 +23,7 @@ class Search extends Component {
     this.setState({ value: event.target.value });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     axios.get(this.apiUrl).then(res => {
       this.props.store.news=res.data.sources;
       this.props.store.count=res.data.sources.length;

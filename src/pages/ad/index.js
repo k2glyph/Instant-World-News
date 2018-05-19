@@ -13,9 +13,14 @@ export default class Ad extends Component {
     slot: "6290912191",
     format: "auto",
   }
-
+  constructor(props) {
+    super(props);
+  }
   componentDidMount() {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
+    // (window.adsbygoogle = window.adsbygoogle || []).push({});
+    window.onload = function() {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+  }
   }
 
   render() {
