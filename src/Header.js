@@ -1,5 +1,4 @@
 import React from 'react';
-import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withRouter } from 'react-router-dom';
@@ -7,7 +6,6 @@ import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
@@ -74,7 +72,10 @@ class Header extends React.Component {
     );
       return (
         <div className="appHeader">
-          <Drawer open={this.state.left} onClose={this.toggleDrawer('left', false)}>
+          <Drawer 
+            open={this.state.left} 
+            onClose={this.toggleDrawer('left', false)} 
+            >
             <div
               tabIndex={0}
               role="button"

@@ -14,17 +14,9 @@ export default class Ad extends Component {
     format: "auto",
   }
 
-  constructor(props) {
-    super(props);
-  }
-  // This code is ran when the component mounts
   componentDidMount() {
     (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
-  
-  // an outer div for styling purposes
-  // changed class to ClassName
-  // changed style from string to an object
 
   render() {
     return (
@@ -39,13 +31,3 @@ export default class Ad extends Component {
     );
   }
 }
-{/* <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- Text Ad -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-2288962802360795"
-     data-ad-slot="6290912191"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script> */}

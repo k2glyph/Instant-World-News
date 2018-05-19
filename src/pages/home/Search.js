@@ -11,8 +11,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
-      value: 'espn-cric-info'
+      count: 0
     };
     this.handleChange = this.handleChange.bind(this);
 
@@ -25,7 +24,6 @@ class Search extends Component {
   }
 
   componentWillMount() {
-    this.props.store.filter=this.state.value;
     axios.get(this.apiUrl).then(res => {
       this.props.store.news=res.data.sources;
       this.props.store.count=res.data.sources.length;
@@ -33,7 +31,7 @@ class Search extends Component {
   }
 
   render() {
-    const { news, count, filter } = this.props.store;
+    const { filter } = this.props.store;
     
     return (
       <div className="">

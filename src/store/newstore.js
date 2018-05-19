@@ -1,10 +1,10 @@
-import { observable, autorun } from 'mobx';
+import { observable } from 'mobx';
 
 class NewsStore {
      @observable news=[];
-     @observable filter="";
+     @observable filter="bbc-news";
      @observable count=0;
 }
-var store = window.store= new NewsStore;
+var store = window.store= new NewsStore();
 
 export default store;

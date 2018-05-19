@@ -7,7 +7,7 @@ class Live extends React.Component {
         return (
             <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                 <h2>Live Cricket Fun.</h2>
-                {/* <Ad slot="8754505575" /> */}
+                <Ad slot="8754505575" />
                 <div style={{background: 'black',width: 700,height: 450}}>
                 <Iframe url="http://c247.to/live.php?ch=Star_Sports1"
                     id="live_channel"
@@ -17,7 +17,7 @@ class Live extends React.Component {
                     position="relative"
                     allowFullScreen/>
                 </div>
-                {/* <Ad /> */}
+                <Ad />
             </div>
         )
     }
