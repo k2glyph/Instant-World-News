@@ -43,11 +43,11 @@ a {
 
 .appHeader {
   background-color: #222;
-  padding: 20px;
+  /* padding: 20px; */
   color: white;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 @keyframes logo-spin {

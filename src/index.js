@@ -1,10 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Main from './Main';
+import Header from './Header';
+import { BrowserRouter } from 'react-router-dom'
+
 import './index.css';
 
 /*DOM Render*/
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter>
+  <React.Fragment>
+    <div className="app">
+      <Header />
+      <Main />
+    </div>
+  </React.Fragment>
+</BrowserRouter>, document.getElementById('root'));
 
 /*Smooth Scrolling Snippet - NO DEPENDENCIES*/
 // Add the class smoothScroll to the links where you want to apply smoothScroll
