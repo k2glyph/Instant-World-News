@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Ad from '../ad';
 
 class Display extends Component {
   constructor(props) {
@@ -91,6 +92,7 @@ class Display extends Component {
               </div>
             </div>
           );
+        <Ad /> 
         })}
       </div>
     );

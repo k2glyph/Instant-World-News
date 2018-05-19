@@ -7,13 +7,10 @@ import './Outlet.css';
 
 class Search extends Component {
   constructor(props) {
-    // Pass props to parent class
     super(props);
-    // Set initial state
     this.state = {
       data: [],
       count: 0,
-      // value:'bbc-news'
       value: this.props.default
     };
     this.handleChange = this.handleChange.bind(this);
@@ -27,15 +24,10 @@ class Search extends Component {
     console.log(this.state.value);
   }
 
-  // Lifecycle method
   componentWillMount() {
-    // Make HTTP reques with Axios
     axios.get(this.apiUrl).then(res => {
-      // Set state with result
       this.setState({ data: res.data.sources });
       this.setState({ count: res.data.sources.length });
-      //console.log(this.state.data);
-      console.log(this.state.value);
     });
   }
 

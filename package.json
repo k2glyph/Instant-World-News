@@ -2,15 +2,27 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "babel": {
+    "plugins": [
+      "transform-decorators-legacy"
+    ],
+    "presets": [
+      "react-app"
+    ]
+  },
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
     "axios": "^0.18.0",
     "bootstrap": "^4.0.0",
+    "mobx": "^4.2.1",
+    "mobx-react": "^5.1.2",
     "moveto": "^1.7.1",
-    "npm": "^5.8.0",
     "react": "^16.3.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.3.0",
     "react-helmet": "^5.2.0",
+    "react-icons-kit": "^1.1.5",
     "react-iframe": "^1.1.0",
     "react-ionicons": "^2.1.6",
     "react-router": "^4.2.0",
