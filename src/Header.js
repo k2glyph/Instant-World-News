@@ -59,7 +59,13 @@ class Header extends React.Component {
           <ListItemText primary="Live Videos" />
         </ListItem></List>
         <Divider />
-        <h2><center>{count} News Site</center></h2>
+        <List>
+          <ListItem>
+              <ListItemText primary={`${count} News Site`} />
+          </ListItem>
+        </List>
+        <Divider />
+        <Divider />
         <List>{
           news.map((outlet, i) => (
             <ListItem button key={outlet.id} component={Link} to={`/news/${outlet.id}`} onClick={()=> this.handleNews(outlet.id)}>
