@@ -14,14 +14,14 @@ body {
   line-height: 1.4;
 }
 
-a {
+/* a {
   border-bottom: 2px solid #ffc600;
   text-decoration: none;
-}
+} */
 
-a:hover {
+/* a:hover {
   border-bottom: 2px solid #FF8F00;
-}
+} */
 
 body {
   display: flex;

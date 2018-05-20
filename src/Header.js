@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import {Link} from 'react-router-dom'
 
 import { observer } from 'mobx-react';
 
@@ -32,7 +33,7 @@ class Header extends React.Component {
     });
   };
   handleNews =(value) => {
-    this.props.history.push('/');
+    this.props.history.push(`/news/${value}`);
     this.props.store.filter=value;
   }
   changeRoute = (path)=> {
@@ -44,15 +45,15 @@ class Header extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-        <ListItem button onClick={()=> this.changeRoute('/')}>
+        <ListItem button component={Link} to="/" onClick={()=> this.handleNews("/")}>
           <ListItemIcon>
           <i className="fa fa-home" aria-hidden="true" />
           </ListItemIcon>
           <ListItemText primary="Home" />
         </ListItem>
-        <ListItem button onClick={()=> this.changeRoute('/live')}>
+        <ListItem button component={Link} to="/live" onClick={()=> this.handleNews("/live")}>
           <ListItemIcon>
-          <i className="fa fa-video" aria-hidden="true" />
+            <i className="fa fa-video-camera" aria-hidden="true"></i>
           </ListItemIcon>
           <ListItemText primary="Live Videos" />
         </ListItem></List>
@@ -60,9 +61,9 @@ class Header extends React.Component {
         <h2><center>{count} News Site</center></h2>
         <List>{
           news.map((outlet, i) => (
-            <ListItem button key={outlet.id} onClick={()=> this.handleNews(outlet.id)}>
+            <ListItem button key={outlet.id} component={Link} to={`/news/${outlet.id}`} onClick={()=> this.handleNews(outlet.id)}>
               <ListItemIcon>
-                <i className="fa fa-newspaper" aria-hidden="false" />
+                <i className="fa fa-file-text" aria-hidden="true"></i>
               </ListItemIcon>
               <ListItemText primary={outlet.name} />
             </ListItem>

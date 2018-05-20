@@ -15,8 +15,8 @@ ReactDOM.render(
       <Header store={Store} />
       <Ad />
       <Main store={Store} />
-      <Ad />
       <Footer store={Store} />
+      <Ad />
     </div>
 </BrowserRouter>, document.getElementById('root'));
 

@@ -12,7 +12,9 @@ class Outlet extends Component {
       data: []
     };
   }
-
+  componentWillMount(){
+    this.setState({ value: this.props.default });
+  }
   // Lifecycle method
   componentDidMount() {
     // Make HTTP reques with Axios

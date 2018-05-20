@@ -69,7 +69,8 @@ class Display extends Component {
       <div className="cardsContainer">
         {this.state.articles.map((news, i) => {
           return (
-            <div className="card" key={i}>
+            <React.Fragment key={i}>
+            <div className="card">
               <div className="content">
                 <h3>
                   <a href={news.url} target="_blank">
@@ -87,9 +88,9 @@ class Display extends Component {
               <div className="image">
                 <img src={news.urlToImage} alt="" />
               </div>
-              {/* <Ad slot="" />  */}
+              <Ad slot="" /> 
             </div>
-            
+            </React.Fragment>
           );
         })}
       </div>

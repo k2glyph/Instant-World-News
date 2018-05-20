@@ -22,7 +22,9 @@ class Search extends Component {
   handleChange(event) {
     this.setState({ value: event.target.value });
   }
-
+  componentWillMount() {
+    this.props.store.filter=this.props.value|| this.props.default;
+  }
   componentDidMount() {
     axios.get(this.apiUrl).then(res => {
       this.props.store.news=res.data.sources;
@@ -32,7 +34,7 @@ class Search extends Component {
 
   render() {
     const { filter } = this.props.store;
-    
+    console.log(filter);
     return (
       <div className="">
         {/* <h4>Select from {count} News Outlets</h4> */}
