@@ -21,7 +21,7 @@ const PropsRoute = ({ component, ...rest }) => {
 }
 
 const Main = (props) => (
-  <main>
+  <main style={props.checkDrawerOpen()? {marginLeft: 210}: {}}>
     { GAListener.init() && <GAListener.RouteTracker /> }
     <Switch>
       <PropsRoute exact path='/' component={Home} store={props.store}/>

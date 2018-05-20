@@ -7,15 +7,19 @@ import Ad from './pages/ad';
 import Store from './store/newstore';
 import Footer from './Footer';
 import './index.css';
-
+function checkDrawerOpen() {
+  if(window.innerWidth>1000) {
+    return true;
+  }
+}
 /*DOM Render*/
 ReactDOM.render(
 <BrowserRouter>
     <div className="app">
-      <Header store={Store} />
+      <Header store={Store} checkDrawerOpen={checkDrawerOpen}/>
       <Ad />
-      <Main store={Store} />
-      <Footer store={Store} />
+      <Main store={Store} checkDrawerOpen={checkDrawerOpen} />
+      <Footer store={Store} checkDrawerOpen={checkDrawerOpen} />
       <Ad />
     </div>
 </BrowserRouter>, document.getElementById('root'));

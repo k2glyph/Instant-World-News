@@ -39,6 +39,7 @@ class Header extends React.Component {
   changeRoute = (path)=> {
     this.props.history.push(path);
   }
+  
   render() {
     const { classes } = this.props;
     const { news, count } =this.props.store;
@@ -75,7 +76,8 @@ class Header extends React.Component {
         <div className="appHeader">
           <Drawer 
             open={this.state.left} 
-            onClose={this.toggleDrawer('left', false)} 
+            onClose={this.toggleDrawer('left', false)}
+            variant={this.props.checkDrawerOpen()?"permanent": ""}
             >
             <div
               tabIndex={0}

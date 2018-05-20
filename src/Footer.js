@@ -4,7 +4,7 @@ import './Footer.css';
 class Footer extends Component {
   render() {
     return (
-      <div className="footerSection">
+      <div className="footerSection" style={this.props.checkDrawerOpen()? {marginLeft: 210}: {}}>
         <a className="smoothScroll" href="#">
           Top <i className="fa fa-2x fa-arrow-up" aria-hidden="true" />
         </a>
