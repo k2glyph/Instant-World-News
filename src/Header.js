@@ -46,6 +46,8 @@ class Header extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
+        <h2 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#222222', color: 'white', marginTop: -8, height: 74 }}>Instant World News</h2>
+        <Divider />
         <ListItem button component={Link} to="/" onClick={()=> this.handleNews("/")}>
           <ListItemIcon>
           <i className="fa fa-home" aria-hidden="true" />

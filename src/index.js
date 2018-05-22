@@ -17,10 +17,13 @@ ReactDOM.render(
 <BrowserRouter>
     <div className="app">
       <Header store={Store} checkDrawerOpen={checkDrawerOpen}/>
-      <Ad />
-      <Main store={Store} checkDrawerOpen={checkDrawerOpen} />
-      <Footer store={Store} checkDrawerOpen={checkDrawerOpen} />
-      <Ad />
+      <div style={checkDrawerOpen()? {marginLeft: 210}: {}}>
+        <Ad />
+        <div style={checkDrawerOpen()? {marginLeft: 30}: {}} dangerouslySetInnerHTML={{__html:'<gcse:search></gcse:search>'}} />
+        <Main store={Store} checkDrawerOpen={checkDrawerOpen} />
+        <Footer store={Store} checkDrawerOpen={checkDrawerOpen} />
+        <Ad />
+      </div>
     </div>
 </BrowserRouter>, document.getElementById('root'));
 
