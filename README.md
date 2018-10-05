@@ -16,7 +16,7 @@ __Instant World News__ is a React App showing news results from more than 70 sou
 ## Demo
 
 <div align="center">
-    <img src="https://imgur.com/a/SCOCJsw"/>
+    <img src="https://i.imgur.com/6zvZUr3.png"/>
 </div>
 
 ## Usage
